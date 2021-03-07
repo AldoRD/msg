@@ -3,7 +3,11 @@ function iniciar() {
 }
 function recibir(evento) {
   var cajadatos = document.getElementById("cajadatos");
-  cajadatos.innerHTML = "Mensaje desde: " + evento.origin + "<br>";
-  cajadatos.innerHTML += "mensaje: " + evento.data;
+  if (evento.origin == "http://www.dominio1.com") {
+    cajadatos.innerHTML = "Mensaje válido: " + evento.data;
+    evento.source.postMessage("Mensaje recibido", evento.origin);
+  } else {
+    cajadatos.innerHTML = "Origen Invalido";
+  }
 }
 window.addEventListener("load", iniciar);
