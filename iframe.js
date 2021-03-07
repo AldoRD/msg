@@ -4,9 +4,7 @@ function iniciar() {
 function recibir(evento) {
   var cajadatos = document.getElementById("cajadatos");
   console.log("prueba");
-  if (
-    evento.origin == "https://pedantic-perlman-bbe478.netlify.app/index.html"
-  ) {
+  if (evento.origin == "https://pedantic-perlman-bbe478.netlify.app/") {
     console.log("prueba");
     cajadatos.innerHTML = "Mensaje válido: " + evento.data;
     evento.source.postMessage("Mensaje recibido", evento.origin);
