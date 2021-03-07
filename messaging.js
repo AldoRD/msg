@@ -6,10 +6,13 @@ function iniciar() {
 function enviar() {
   var nombre = document.getElementById("nombre").value;
   var iframe = document.getElementById("iframe");
-  iframe.contentWindow.postMessage(nombre, "http://www.dominio2.com");
+  iframe.contentWindow.postMessage(
+    nombre,
+    "https://adoring-panini-4388ae.netlify.app"
+  );
 }
 function recibir(evento) {
-  if (evento.origin == "http://www.dominio2.com") {
+  if (evento.origin == "https://adoring-panini-4388ae.netlify.app") {
     document.getElementById("nombre").value = evento.data;
   }
 }
