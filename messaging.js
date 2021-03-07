@@ -8,11 +8,14 @@ function enviar() {
   var iframe = document.getElementById("iframe");
   iframe.contentWindow.postMessage(
     nombre,
-    "https://adoring-panini-4388ae.netlify.app"
+    "https://pedantic-perlman-bbe478.netlify.app/iframe/iframe.html"
   );
 }
 function recibir(evento) {
-  if (evento.origin == "https://adoring-panini-4388ae.netlify.app") {
+  if (
+    evento.origin ==
+    "https://pedantic-perlman-bbe478.netlify.app/iframe/iframe.html"
+  ) {
     document.getElementById("nombre").value = evento.data;
   }
 }
